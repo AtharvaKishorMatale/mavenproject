@@ -1,0 +1,59 @@
+Started by user AKM
+Running as SYSTEM
+Building in workspace /var/lib/jenkins/workspace/mavenbuild
+The recommended git tool is: NONE
+No credentials specified
+ > git rev-parse --resolve-git-dir /var/lib/jenkins/workspace/mavenbuild/.git # timeout=10
+Fetching changes from the remote Git repository
+ > git config remote.origin.url https://github.com/AtharvaKishorMatale/mavenproject.git # timeout=10
+Fetching upstream changes from https://github.com/AtharvaKishorMatale/mavenproject.git
+ > git --version # timeout=10
+ > git --version # 'git version 2.43.0'
+ > git fetch --tags --force --progress -- https://github.com/AtharvaKishorMatale/mavenproject.git +refs/heads/*:refs/remotes/origin/* # timeout=10
+ > git rev-parse refs/remotes/origin/main^{commit} # timeout=10
+Checking out Revision b821f29e1f013daf51385c75bf39f9f14bc66156 (refs/remotes/origin/main)
+ > git config core.sparsecheckout # timeout=10
+ > git checkout -f b821f29e1f013daf51385c75bf39f9f14bc66156 # timeout=10
+Commit message: "build1"
+ > git rev-list --no-walk b821f29e1f013daf51385c75bf39f9f14bc66156 # timeout=10
+[mavenbuild] $ /var/lib/jenkins/tools/hudson.tasks.Maven_MavenInstallation/mymaven/bin/mvn clean package
+[INFO] Scanning for projects...
+[INFO] 
+[INFO] ----------------------< com.fortune.myapp:my-app >----------------------
+[INFO] Building my-app 1.0-SNAPSHOT
+[INFO]   from pom.xml
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- clean:3.2.0:clean (default-clean) @ my-app ---
+[INFO] Deleting /var/lib/jenkins/workspace/mavenbuild/target
+[INFO] 
+[INFO] --- enforcer:3.5.0:enforce (enforce-maven) @ my-app ---
+[INFO] Rule 0: org.apache.maven.enforcer.rules.version.RequireMavenVersion passed
+[INFO] Rule 1: org.apache.maven.enforcer.rules.version.RequireJavaVersion passed
+[INFO] 
+[INFO] --- resources:3.3.1:resources (default-resources) @ my-app ---
+[INFO] skip non existing resourceDirectory /var/lib/jenkins/workspace/mavenbuild/src/main/resources
+[INFO] 
+[INFO] --- compiler:3.14.0:compile (default-compile) @ my-app ---
+[INFO] No sources to compile
+[INFO] 
+[INFO] --- resources:3.3.1:testResources (default-testResources) @ my-app ---
+[INFO] skip non existing resourceDirectory /var/lib/jenkins/workspace/mavenbuild/src/test/resources
+[INFO] 
+[INFO] --- compiler:3.14.0:testCompile (default-testCompile) @ my-app ---
+[INFO] No sources to compile
+[INFO] 
+[INFO] --- surefire:3.2.5:test (default-test) @ my-app ---
+[INFO] No tests to run.
+[INFO] 
+[INFO] --- jar:3.4.2:jar (default-jar) @ my-app ---
+[WARNING] JAR will be empty - no content was marked for inclusion!
+[INFO] Building jar: /var/lib/jenkins/workspace/mavenbuild/target/my-app-1.0-SNAPSHOT.jar
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD SUCCESS
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  4.099 s
+[INFO] Finished at: 2025-04-30T03:17:36Z
+[INFO] ------------------------------------------------------------------------
+Triggering a new build of maven test
+Finished: SUCCESS

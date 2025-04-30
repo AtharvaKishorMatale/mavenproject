@@ -1,0 +1,56 @@
+Started by upstream project "mavenbuild" build number 2
+originally caused by:
+ Started by user AKM
+Running as SYSTEM
+Building in workspace /var/lib/jenkins/workspace/maven test
+The recommended git tool is: NONE
+No credentials specified
+Cloning the remote Git repository
+Cloning repository https://github.com/AtharvaKishorMatale/mavenproject.git
+ > git init /var/lib/jenkins/workspace/maven test # timeout=10
+Fetching upstream changes from https://github.com/AtharvaKishorMatale/mavenproject.git
+ > git --version # timeout=10
+ > git --version # 'git version 2.43.0'
+ > git fetch --tags --force --progress -- https://github.com/AtharvaKishorMatale/mavenproject.git +refs/heads/*:refs/remotes/origin/* # timeout=10
+ > git config remote.origin.url https://github.com/AtharvaKishorMatale/mavenproject.git # timeout=10
+ > git config --add remote.origin.fetch +refs/heads/*:refs/remotes/origin/* # timeout=10
+Avoid second fetch
+ > git rev-parse refs/remotes/origin/main^{commit} # timeout=10
+Checking out Revision b821f29e1f013daf51385c75bf39f9f14bc66156 (refs/remotes/origin/main)
+ > git config core.sparsecheckout # timeout=10
+ > git checkout -f b821f29e1f013daf51385c75bf39f9f14bc66156 # timeout=10
+Commit message: "build1"
+First time build. Skipping changelog.
+[maven test] $ /var/lib/jenkins/tools/hudson.tasks.Maven_MavenInstallation/mymaven/bin/mvn test
+[INFO] Scanning for projects...
+[INFO] 
+[INFO] ----------------------< com.fortune.myapp:my-app >----------------------
+[INFO] Building my-app 1.0-SNAPSHOT
+[INFO]   from pom.xml
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- enforcer:3.5.0:enforce (enforce-maven) @ my-app ---
+[INFO] Rule 0: org.apache.maven.enforcer.rules.version.RequireMavenVersion passed
+[INFO] Rule 1: org.apache.maven.enforcer.rules.version.RequireJavaVersion passed
+[INFO] 
+[INFO] --- resources:3.3.1:resources (default-resources) @ my-app ---
+[INFO] skip non existing resourceDirectory /var/lib/jenkins/workspace/maven test/src/main/resources
+[INFO] 
+[INFO] --- compiler:3.14.0:compile (default-compile) @ my-app ---
+[INFO] No sources to compile
+[INFO] 
+[INFO] --- resources:3.3.1:testResources (default-testResources) @ my-app ---
+[INFO] skip non existing resourceDirectory /var/lib/jenkins/workspace/maven test/src/test/resources
+[INFO] 
+[INFO] --- compiler:3.14.0:testCompile (default-testCompile) @ my-app ---
+[INFO] No sources to compile
+[INFO] 
+[INFO] --- surefire:3.2.5:test (default-test) @ my-app ---
+[INFO] No tests to run.
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD SUCCESS
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  2.767 s
+[INFO] Finished at: 2025-04-30T03:17:52Z
+[INFO] ------------------------------------------------------------------------
+Finished: SUCCESS
